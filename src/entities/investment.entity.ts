@@ -26,8 +26,8 @@ export class Investment {
       fund_id: this.fundId,
       amount_usd: this.amountUsd.toString(),
       investment_date: this.investmentDate.toISOString().split('T')[0],
-      ...(this.investor && { investor: this.investor }),
-      ...(this.fund && { fund: this.fund })
+      //...(this.investor && { investor: this.investor }),
+      //...(this.fund && { fund: this.fund })
     };
   }
 }

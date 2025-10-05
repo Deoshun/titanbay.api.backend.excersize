@@ -1,9 +1,25 @@
 import { prisma } from '../index';
-import { Investment } from '../entities/investment.entity';
+import { Investment } from '../entities/Investment.entity';
 
 export class InvestmentModel {
   static async findAll(): Promise<Investment[]> {
     const investments = await prisma.investment.findMany({
+      include: { investor: true, fund: true }
+    });
+    return investments.map(investment => new Investment(investment));
+  }
+
+  static async findByFund(fundId: string): Promise<Investment[]> {
+    const investments = await prisma.investment.findMany({
+      where: { fundId },
+      include: { investor: true, fund: true }
+    });
+    return investments.map(investment => new Investment(investment));
+  }
+
+  static async findByInvestor(investorId: string): Promise<Investment[]> {
+    const investments = await prisma.investment.findMany({
+      where: { investorId },
       include: { investor: true, fund: true }
     });
     return investments.map(investment => new Investment(investment));
@@ -19,3 +35,4 @@ export class InvestmentModel {
     return new Investment(investment);
   }
 }
+

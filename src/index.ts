@@ -2,7 +2,6 @@ import express, { Application, Request, Response } from 'express';
 import { PrismaClient } from '@prisma/client';
 import fundRoutes from './routes/fund.routes';
 import investorRoutes from './routes/investor.routes';
-import investmentRoutes from './routes/investment.routes';
 
 export const prisma = new PrismaClient();
 
@@ -15,7 +14,6 @@ app.use(express.json());
 // Routes
 app.use('/funds', fundRoutes);
 app.use('/investors', investorRoutes);
-app.use('/investments', investmentRoutes);
 
 // Health check
 app.get('/health', (req: Request, res: Response) => {

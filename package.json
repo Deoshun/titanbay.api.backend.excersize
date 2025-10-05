@@ -2,7 +2,11 @@
   "name": "fund-api",
   "type": "module",
   "version": "1.0.0",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "scripts": {
+    "prisma:seed": "prisma db seed",
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js",

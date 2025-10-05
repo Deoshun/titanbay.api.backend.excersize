@@ -16,7 +16,6 @@ export class InvestorController {
     try {
       const dto = new CreateInvestorDto(req.body);
       const investor = await InvestorModel.create(dto.toPrisma());
-      console.log(investor);
       res.status(201).json(investor.toJSON());
     } catch (error) {
       res.status(500).json({ error: `${error} Failed to create investor` });

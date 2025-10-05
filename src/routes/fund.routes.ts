@@ -6,6 +6,8 @@ const controller = new FundController();
 
 router.get('/', controller.getAll);
 router.get('/:id', controller.getById);
+router.get('/:id/investments', controller.getInvestments);
+router.post('/:id/investments', controller.createInvestment);
 router.post('/', controller.create);
 router.put('/', controller.update);
 //router.delete('/:id', controller.delete);
