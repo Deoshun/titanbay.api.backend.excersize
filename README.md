@@ -19,7 +19,7 @@ TypeScript + Express + Prisma REST API
 - `GET /funds` - List all funds
 - `GET /funds/{id}` - Get a specific fund
 - `POST /funds` - Create a new fund
-- `PUT /funds` - Update an existing fund (ID in body)
+- `PUT /funds` - Update an existing fund
 
 ### Investors
 - `GET /investors` - List all investors
